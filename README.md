@@ -137,7 +137,7 @@ Each check is a query where **an empty result means the check passed**.
 
 ## PostgreSQL Implementation
 
-This project is based on a course that uses **SQL Server (T-SQL)**. I rebuilt the whole warehouse in **PostgreSQL**, which meant:
+This project uses **PostgreSQL**:
 
 - Rewriting the load procedures in **PL/pgSQL** (`CREATE OR REPLACE PROCEDURE`, `CALL`)
 - Replacing `BULK INSERT` with `COPY ... WITH (FORMAT CSV, HEADER TRUE)`
@@ -242,17 +242,4 @@ This version deliberately stays simple. Here is how I would take it toward a pro
 - **Data quality:** testing for key integrity, consistency and referential integrity
 - **Documentation:** architecture diagrams, data lineage and a data catalog
 
----
 
-## Acknowledgements
-
-The project design, requirements and source datasets come from the [SQL Data Warehouse Project](https://github.com/DataWithBaraa/sql-data-warehouse-project) by Baraa Khatib Salkini (Data With Baraa), released under the MIT License. This repository is my own PostgreSQL implementation of the data warehouse part of that project.
-
----
-
-## Author
-
-**Hiep Nguyen** · Open to junior Analytics Engineer and Data Engineer roles
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/YOUR-PROFILE)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/hiepnguyenbg)
