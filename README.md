@@ -125,7 +125,7 @@ Each check is a query where **an empty result means the check passed**.
 
 | Decision | Rationale |
 |---|---|
-| **Full load (truncate and insert)** | Sources are small batch extracts and only the latest snapshot is required. A full refresh is simple and gives the same result every time it runs. |
+| **Full load (truncate and insert)** | Sources are small batch extracts. A full refresh is simple and gives the same result every time it runs. |
 | **Keep Bronze raw** | Preserves the original source data for debugging, auditing and reprocessing without extracting it again. |
 | **Gold as views** | Always in sync with Silver, with no extra storage or load step. The trade-off is compute at query time, so views could be materialized as data volumes grow. |
 | **CRM is the source of truth for gender** | When CRM has no value, the model falls back to ERP. This is an explicit, documented rule for handling conflicting attributes. |
