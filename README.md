@@ -134,18 +134,6 @@ Each check is a query where **an empty result means the check passed**.
 
 ---
 
-## PostgreSQL Implementation
-
-This project uses **PostgreSQL**:
-
-- Rewriting the load procedures in **PL/pgSQL** (`CREATE OR REPLACE PROCEDURE`, `CALL`)
-- Replacing `BULK INSERT` with `COPY ... WITH (FORMAT CSV, HEADER TRUE)`
-- Translating T-SQL idioms to PostgreSQL: `PRINT` → `RAISE NOTICE`, `GETDATE()` → `clock_timestamp()` / `CURRENT_TIMESTAMP`, `LEN()` → `LENGTH()`, `ISNULL()` → `COALESCE()`, `IF OBJECT_ID(...)` → `DROP ... IF EXISTS`, and integer-to-date conversion with `TO_DATE()`
-- Adding **row-count logging** for each table with `GET DIAGNOSTICS`
-- Getting around macOS privacy (TCC) restrictions on server-side `COPY` by placing the source files in `/Users/Shared`
-
----
-
 ## Repository Structure
 
 ```
