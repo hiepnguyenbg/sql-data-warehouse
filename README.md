@@ -6,7 +6,6 @@
 
 An end-to-end data warehouse built in **PostgreSQL**. It ingests customer, product and sales data from two source systems (CRM and ERP), cleans and integrates it through **Bronze → Silver → Gold** layers, and publishes a **star schema** that BI tools and analysts can query directly.
 
-> **Scope:** This repository covers the data engineering work: ingestion, transformation, data modeling, data quality testing and documentation. Reporting and dashboards built on top of the warehouse are out of scope.
 
 ---
 
