@@ -1,7 +1,6 @@
 # SQL Data Warehouse · PostgreSQL · Medallion Architecture
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
-![PL/pgSQL](https://img.shields.io/badge/PL%2FpgSQL-336791?style=flat)
 ![SQL](https://img.shields.io/badge/SQL-025E8C?style=flat)
 ![draw.io](https://img.shields.io/badge/draw.io-F08705?style=flat&logo=diagramsdotnet&logoColor=white)
 
