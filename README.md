@@ -173,19 +173,6 @@ sql-data-warehouse/
 
 ---
 
-## Limitations and Next Steps
-
-This version deliberately stays simple. Here is how I would take it toward a production-grade setup:
-
-- **dbt:** rebuild the Silver and Gold transformations as dbt models with schema tests (`unique`, `not_null`, `relationships`) and generated documentation and lineage
-- **Orchestration:** schedule the pipeline with Airflow or Dagster, with retries and failure alerts
-- **Incremental loads and SCD Type 2:** track history for customers and products instead of loading full snapshots
-- **Stable surrogate keys:** replace `ROW_NUMBER()` keys, which can shift between loads, with identity columns or hashed business keys
-- **Error handling and auditing:** add `EXCEPTION` blocks and a load audit table that records run status and row counts
-- **Reproducibility:** containerize with Docker and run the quality checks in CI (GitHub Actions)
-
----
-
 ## Skills Demonstrated
 
 - **Data modeling:** dimensional modeling (star schema), defining grain, surrogate keys
