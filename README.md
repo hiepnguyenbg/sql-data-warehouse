@@ -19,6 +19,8 @@ The goal is to build a reliable data foundation that supports reporting, analyti
 ## Architecture
 
 This project follows the **Medallion Architecture:**
+<br>
+<br>
 <img width="1400" height="1000" alt="data_architecture (2)" src="https://github.com/hiepnguyenbg/sql-data-warehouse/blob/main/docs/data_architecture.png" />
 
 
