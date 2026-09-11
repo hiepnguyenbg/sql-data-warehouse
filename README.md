@@ -147,53 +147,6 @@ This project uses **PostgreSQL**:
 
 ---
 
-## How to Run
-
-**Prerequisites:** PostgreSQL 14+ and `psql` (or a GUI client such as pgAdmin or DBeaver).
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/hiepnguyenbg/sql-data-warehouse.git
-   cd sql-data-warehouse
-   ```
-
-2. **Place the source files where the PostgreSQL server can read them.** The load procedure reads from `/Users/Shared/datasets/`. On another OS, update the file paths in `scripts/bronze/proc_load_bronze.sql`.
-
-   ```bash
-   cp -R datasets /Users/Shared/
-   ```
-
-   > Server-side `COPY` needs a superuser or the `pg_read_server_files` role.
-
-3. **Create the database and schemas**
-
-   ```bash
-   psql -U postgres -c "CREATE DATABASE datawarehouse;"
-   psql -U postgres -d datawarehouse -c "CREATE SCHEMA bronze; CREATE SCHEMA silver; CREATE SCHEMA gold;"
-   ```
-
-4. **Build and load each layer in order**
-
-   ```bash
-   psql -U postgres -d datawarehouse -f scripts/bronze/ddl_bronze.sql
-   psql -U postgres -d datawarehouse -f scripts/bronze/proc_load_bronze.sql   # creates and runs bronze.load_bronze()
-   psql -U postgres -d datawarehouse -f scripts/silver/ddl_silver.sql
-   psql -U postgres -d datawarehouse -f scripts/silver/proc_load_silver.sql   # creates and runs silver.load_silver()
-   psql -U postgres -d datawarehouse -f scripts/gold/ddl_gold.sql
-   ```
-
-5. **Run the data quality checks**
-
-   ```bash
-   psql -U postgres -d datawarehouse -f tests/quality_checks_silver.sql
-   psql -U postgres -d datawarehouse -f tests/quality_checks_gold.sql
-   ```
-
-To refresh the data later, run `CALL bronze.load_bronze();` followed by `CALL silver.load_silver();`. The Gold views update automatically.
-
----
-
 ## Repository Structure
 
 ```
