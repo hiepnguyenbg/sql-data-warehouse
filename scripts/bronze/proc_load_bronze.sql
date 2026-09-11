@@ -7,7 +7,7 @@ Script Purpose:
 	It performs the following actions:
 	- Truncates the bronze tables before loading data.
 	- Uses the 'COPY' command to load data from CSV files to bronze tables.
-	Note that the datasets need to be moved to /Users/Shared folder to avoid MacOS TCC privacy if using Macbook. 
+	* Note for Macbook users: the datasets need to be moved to /Users/Shared folder to avoid MacOS TCC privacy. 
 
 Parameters:
 	None. This stored procedure does not accept any parameters or return any values.
