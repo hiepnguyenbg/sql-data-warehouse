@@ -15,7 +15,7 @@ An end-to-end data warehouse built in **PostgreSQL**. It ingests customer, produ
 |---|---|
 | **Sources** | 2 systems (CRM, ERP) · 6 CSV files |
 | **Layers** | Bronze (raw) → Silver (cleaned and standardized) → Gold (star schema) |
-| **Gold model** | 1 fact (`fact_sales`, ~60K order lines) · 2 dimensions (`dim_customers`, `dim_products`) |
+| **Gold model** | 1 fact (`fact_sales`) · 2 dimensions (`dim_customers`, `dim_products`) |
 | **Pipeline** | 2 PL/pgSQL stored procedures that log row counts and load durations |
 | **Data quality** | SQL test suites for the Silver and Gold layers |
 | **Documentation** | Architecture, data flow, integration and data model diagrams, plus a data catalog |
